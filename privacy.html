@@ -1,112 +1,105 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy — Parkis</title>
+  <title>Integritetspolicy — Parkis</title>
   <style>
     body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;max-width:860px;margin:24px auto;padding:0 16px}
     h1,h2{line-height:1.2}
-    code{background:#f3f3f3;padding:2px 6px;border-radius:6px}
+    .muted{color:#555}
     ul{padding-left:18px}
+    code{background:#f3f3f3;padding:2px 6px;border-radius:6px}
   </style>
 </head>
 <body>
-  <h1>Privacy Policy — Parkis</h1>
-  <p><strong>Last updated:</strong> 2026-02-13</p>
+  <h1>Integritetspolicy — Parkis</h1>
+  <p class="muted"><strong>Senast uppdaterad:</strong> 2026-02-13</p>
 
-  <h2>Overview</h2>
+  <h2>1) Översikt</h2>
   <p>
-    Parkis helps users interpret parking signs. To provide results, the app processes images you choose to capture or select.
-    We aim to collect the minimum data needed to operate the app securely and prevent abuse (e.g., credit fraud).
+    Parkis hjälper användare att tolka parkeringsskyltar genom bildanalys. När du använder appens analysfunktion behandlas
+    de bilder du väljer att skicka in. Vår AI-modell är utvecklad och tränad internt från grunden (from scratch).
+    Vi behandlar endast den information som behövs för att leverera tjänsten, skydda systemet mot missbruk och uppfylla
+    lagkrav.
   </p>
 
-  <h2>Data We Collect / Process</h2>
+  <h2>2) Vilka uppgifter vi behandlar</h2>
   <ul>
-    <li>
-      <strong>Photos or Videos (User Content)</strong>:
-      When you capture or select an image to analyze, the image is processed to generate interpretation results.
-      <br/>
-      <em>Processing:</em> Images may be transmitted to our backend service for analysis. We do not use your images for advertising.
-    </li>
-
-    <li>
-      <strong>Device ID / Identifiers</strong>:
-      The app and third-party SDKs may process device identifiers to:
-      (a) operate core features (credits, subscriptions),
-      (b) protect the service (fraud prevention & security),
-      and (c) display ads if ads are enabled.
-    </li>
-
-    <li>
-      <strong>Advertising Data</strong>:
-      If ads are enabled, advertising partners may process ad-related signals to show and measure ads (for example: ad impressions,
-      clicks, or basic ad performance).
-    </li>
-
-    <li>
-      <strong>Product Interaction</strong>:
-      We may process interactions inside the app (for example: which screens are opened, paywall views, or ad interactions)
-      to operate the app, measure performance, and improve stability.
-    </li>
-
-    <li>
-      <strong>Diagnostics / Crash Data</strong>:
-      Crash logs and basic diagnostic information may be collected to improve stability and fix bugs.
-    </li>
-
-    <li>
-      <strong>Purchases / Subscriptions</strong>:
-      If you purchase credits or a subscription, transaction handling is performed by Apple and our subscription provider (RevenueCat).
-      We do not receive or store your full payment card details.
-    </li>
+    <li><strong>Bilder (användarinnehåll):</strong> När du tar eller väljer en bild skickas den till vår server för behandling och för att kunna generera ett analysresultat som returneras till appen.</li>
+    <li><strong>Text i bilden (om relevant):</strong> Om bilden innehåller text kan texten tolkas/extraheras som en del av analysen för att förbättra resultatets precision (t.ex. tider och villkor).</li>
+    <li><strong>Enhets-/app-identifierare:</strong> Parkis använder en slumpmässig app-identitet (UUID) lokalt på din enhet för att hantera credits, köpstatus och säkerhetskontroller. Ingen inloggning krävs.</li>
+    <li><strong>Diagnostik:</strong> Tekniska loggar och felrapporter kan behandlas för att förbättra stabilitet och säkerhet.</li>
+    <li><strong>Köp och credits:</strong> Uppgifter kopplade till köp (t.ex. transaktions-/kvittoindikatorer och abonnemangsstatus) samt ditt credits-saldo behandlas för att leverera betalfunktioner och förhindra manipulation.</li>
   </ul>
 
-  <h2>Tracking (App Tracking Transparency)</h2>
+  <h2>3) Hur vi använder uppgifterna</h2>
+  <ul>
+    <li><strong>Appfunktionalitet:</strong> Bearbeta bilder på servern och leverera analysresultat.</li>
+    <li><strong>Utveckling av AI:</strong> Bilder kan sparas och användas i tester/experiment för att vidareutveckla och förbättra vår AI-modell och dess kvalitet.</li>
+    <li><strong>Säkerhet och anti-fusk:</strong> Upptäcka och förhindra missbruk, automatiserade attacker och manipulation av credits/betalflöden.</li>
+    <li><strong>Stabilitet:</strong> Felsöka, åtgärda buggar och förbättra prestanda.</li>
+  </ul>
+
+  <h2>4) Lagringstid</h2>
   <p>
-    Parkis does not track you across other companies’ apps and websites for advertising unless you explicitly opt in where required.
-    If we ever enable features that require tracking permission, iOS will ask for your consent via App Tracking Transparency (ATT).
+    Bilder som sparas för tester/utveckling av AI lagras i upp till <strong>3 månader</strong> och raderas därefter.
+    Övriga tekniska loggar och säkerhetsrelaterade uppgifter behålls endast så länge som krävs för ändamålet eller enligt
+    tillämpliga lagkrav.
   </p>
 
-  <h2>How We Use Data</h2>
-  <ul>
-    <li><strong>App Functionality:</strong> Provide image analysis and results, manage credits/subscriptions, and deliver core features.</li>
-    <li><strong>Security & Fraud Prevention:</strong> Detect and prevent abuse (e.g., repeated free credits via reinstall, automated misuse, or tampering).</li>
-    <li><strong>Analytics & Performance:</strong> Understand crashes and improve reliability.</li>
-    <li><strong>Advertising (if enabled):</strong> Display and measure ads.</li>
-  </ul>
-
-  <h2>Data Sharing</h2>
+  <h2>5) Delning med tredje part</h2>
   <p>
-    We do not sell personal data. We share data only with service providers needed to operate the app:
-  </p>
-  <ul>
-    <li><strong>Backend processing/hosting:</strong> used to analyze images and return results.</li>
-    <li><strong>RevenueCat:</strong> subscription and in-app purchase management.</li>
-    <li><strong>Advertising partners (e.g., Google AdMob) if ads are enabled:</strong> ad delivery and measurement.</li>
-    <li><strong>Crash/diagnostics providers (if enabled):</strong> stability and bug fixing.</li>
-  </ul>
-
-  <h2>Data Retention</h2>
-  <ul>
-    <li><strong>Images:</strong> Used to generate results. We do not keep your images longer than necessary for processing unless you explicitly enable a saving/history feature (if available in your version of the app).</li>
-    <li><strong>Diagnostics:</strong> Retained for a limited time to investigate crashes and improve stability.</li>
-  </ul>
-
-  <h2>Your Choices</h2>
-  <ul>
-    <li>You can deny camera/photo permissions and still use other parts of the app.</li>
-    <li>You can disable ads by upgrading if a premium option is available.</li>
-    <li>If ATT permission is requested, you can deny it in iOS settings.</li>
-  </ul>
-
-  <h2>Security</h2>
-  <p>
-    We use reasonable safeguards to protect data in transit and reduce abuse. However, no method of transmission or storage is 100% secure.
-    If you suspect misuse, contact us immediately.
+    Vi säljer inte personuppgifter. Vi kan dela nödvändiga uppgifter med betrodda leverantörer som behövs för att driva tjänsten,
+    till exempel molninfrastruktur för bildbehandling och drift, samt betal- och abonnemangshantering.
   </p>
 
-  <h2>Contact</h2>
-  <p>If you have questions, contact: <strong>contact@deeplabs.se</strong></p>
+  <h2>6) Spårning och annonser</h2>
+  <p>
+    Parkis visar <strong>inga annonser</strong> i nuläget. Parkis spårar inte dig över andra företags appar och webbplatser.
+    Om detta ändras i framtiden uppdateras denna policy, och eventuella tillstånd/val som krävs enligt iOS kommer att hanteras enligt gällande regler.
+  </p>
+
+  <h2>7) Betalningar via RevenueCat (credits)</h2>
+  <p>
+    Betalningar och abonnemang hanteras via App Store/Google Play samt RevenueCat för att verifiera köpstatus och hantera credits.
+    Vi lagrar inte fullständiga kortuppgifter. Vi kan lagra nödvändiga transaktionsindikatorer, köpstatus och credits-saldo på serversidan
+    för att säkerställa korrekt saldo och förhindra manipulation.
+  </p>
+
+  <h2>8) Säkerhet och anti-fusk</h2>
+  <p>
+    Vi använder rimliga säkerhetsåtgärder (t.ex. krypterad överföring, åtkomstkontroller och serverbaserade valideringar) för att skydda data
+    och minska risken för intrång och fusk. Försök att manipulera credits, betalflöden eller säkerhetsmekanismer kan leda till avstängning,
+    och vid misstanke om bedrägeri eller intrång kan ärendet hanteras enligt tillämplig lag och rapporteras till berörda instanser.
+  </p>
+
+  <h2>9) Rättslig grund (GDPR)</h2>
+  <p>
+    Vi behandlar uppgifter för att kunna leverera tjänsten (avtal/berättigat intresse) och för att skydda systemet mot missbruk (berättigat intresse).
+    När bilder sparas för tester/utveckling av AI görs detta i syfte att förbättra tjänstens kvalitet och säkerhet, och med lämpliga skyddsåtgärder.
+  </p>
+
+  <h2>10) Dina rättigheter</h2>
+  <p>
+    Du kan begära information om behandling kopplad till din app-identitet (UUID), begära rättelse eller radering när det är möjligt,
+    samt invända mot viss behandling. Kontakta oss via e-post nedan.
+  </p>
+
+  <h2>11) Barn</h2>
+  <p>
+    Appen är inte avsedd för barn under 13 år. Om du är vårdnadshavare och tror att ett barn har skickat in data av misstag, kontakta oss.
+  </p>
+
+  <h2>12) Ändringar i policyn</h2>
+  <p>
+    Vi kan uppdatera denna policy vid behov, exempelvis vid ändringar i funktioner, säkerhetsåtgärder eller lagkrav.
+    Den senaste versionen publiceras och gäller från och med datumet “Senast uppdaterad”.
+  </p>
+
+  <h2>13) Kontakt</h2>
+  <p>
+    För frågor om denna policy, kontakta oss: <strong>contact@deeplabs.se</strong>
+  </p>
 </body>
 </html>
