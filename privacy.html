@@ -19,40 +19,103 @@
   <h2>1) Översikt</h2>
   <p>
     Parkis hjälper användare att tolka parkeringsskyltar genom bildanalys. När du använder appens analysfunktion behandlas
-    de bilder du väljer att skicka in. Vår AI-modell är utvecklad och tränad internt från grunden (from scratch).
-    Vi behandlar endast den information som behövs för att leverera tjänsten, skydda systemet mot missbruk och uppfylla
-    lagkrav.
+    de bilder du väljer att skicka in.
+  </p>
+  <p>
+    <strong>AI i Parkis:</strong> Huvudanalysen utförs av en intern AI-modell som är utvecklad och tränad av Parkis (skapad internt).
+    Modellen är avsedd att känna igen och filtrera <strong>endast parkeringsskyltar</strong> och används inte för att identifiera personer.
+  </p>
+  <p>
+    <strong>Viktigt om tredjepart (AI):</strong> För att läsa text i bilder (OCR) kan vi, efter ditt samtycke, använda
+    <strong>Google Cloud Vision</strong>. För att översätta extraherad text kan vi, efter ditt samtycke, använda <strong>DeepL</strong>.
+    Analysresultat och appdata kan lagras i <strong>Google Cloud Firestore</strong>.
+    Vi skickar inte data till dessa tjänster utan att du först ger ditt <strong>samtycke</strong> i appen.
   </p>
 
   <h2>2) Vilka uppgifter vi behandlar</h2>
   <ul>
-    <li><strong>Bilder (användarinnehåll):</strong> När du tar eller väljer en bild skickas den till vår server för behandling och för att kunna generera ett analysresultat som returneras till appen.</li>
-    <li><strong>Text i bilden (om relevant):</strong> Om bilden innehåller text kan texten tolkas/extraheras som en del av analysen för att förbättra resultatets precision (t.ex. tider och villkor).</li>
-    <li><strong>Enhets-/app-identifierare:</strong> Parkis använder en slumpmässig app-identitet (UUID) lokalt på din enhet för att hantera credits, köpstatus och säkerhetskontroller. Ingen inloggning krävs.</li>
-    <li><strong>Diagnostik:</strong> Tekniska loggar och felrapporter kan behandlas för att förbättra stabilitet och säkerhet.</li>
-    <li><strong>Köp och credits:</strong> Uppgifter kopplade till köp (t.ex. transaktions-/kvittoindikatorer och abonnemangsstatus) samt ditt credits-saldo behandlas för att leverera betalfunktioner och förhindra manipulation.</li>
+    <li>
+      <strong>Bilder (användarinnehåll):</strong> När du tar eller väljer en bild kan den laddas upp till vår server för att generera ett analysresultat som returneras till appen.
+      Bilder kan innehålla personuppgifter om sådant råkar finnas i bilden (t.ex. registreringsskyltar).
+    </li>
+    <li>
+      <strong>Text i bilden (om relevant):</strong> Text kan extraheras som en del av analysen (t.ex. tider och villkor) och kan vid behov översättas.
+    </li>
+    <li>
+      <strong>Enhets-/app-identifierare (UUID):</strong> Parkis använder en slumpmässig app-identitet (UUID) lokalt på din enhet för att hantera credits, köpstatus och säkerhetskontroller.
+      Ingen inloggning krävs.
+    </li>
+    <li>
+      <strong>Diagnostik:</strong> Tekniska loggar och felhändelser kan behandlas för att förbättra stabilitet och säkerhet.
+    </li>
+    <li>
+      <strong>Köp och credits:</strong> Uppgifter kopplade till köp (t.ex. abonnemangsstatus och nödvändiga transaktionsindikatorer) samt ditt credits-saldo behandlas för att leverera betalfunktioner och förhindra manipulation.
+    </li>
   </ul>
 
   <h2>3) Hur vi använder uppgifterna</h2>
   <ul>
     <li><strong>Appfunktionalitet:</strong> Bearbeta bilder på servern och leverera analysresultat.</li>
-    <li><strong>Utveckling av AI:</strong> Bilder kan sparas och användas i tester/experiment för att vidareutveckla och förbättra vår AI-modell och dess kvalitet.</li>
+    <li><strong>Textförståelse (OCR) och översättning:</strong> Extrahera text från bilden och vid behov översätta text för att förbättra resultatets precision.</li>
+    <li>
+      <strong>Valfri förbättring av AI (opt-in):</strong> Endast om du aktivt väljer detta i appen kan vissa bilder sparas temporärt för tester/experiment i syfte att förbättra vår interna AI-modell och tjänstens kvalitet.
+    </li>
     <li><strong>Säkerhet och anti-fusk:</strong> Upptäcka och förhindra missbruk, automatiserade attacker och manipulation av credits/betalflöden.</li>
     <li><strong>Stabilitet:</strong> Felsöka, åtgärda buggar och förbättra prestanda.</li>
   </ul>
 
+  <h2>3.1) Samtycke innan data delas med tredjeparts-AI</h2>
+  <p>
+    Innan vi skickar en bild eller text till en tredjeparts-AI-tjänst (t.ex. Google Cloud Vision för OCR eller DeepL för översättning)
+    visar appen en tydlig samtyckesruta. Du kan välja <strong>Godkänn</strong> eller <strong>Inte nu</strong>.
+    Om du väljer "Inte nu" skickas ingen data till tredjeparts-AI och online-analysen genomförs inte.
+  </p>
+  <p>
+    Du kan när som helst ändra ditt val i appens inställningar (om funktionen finns) eller genom att kontakta oss.
+  </p>
+
   <h2>4) Lagringstid</h2>
   <p>
-    Bilder som sparas för tester/utveckling av AI lagras i upp till <strong>3 månader</strong> och raderas därefter.
-    Övriga tekniska loggar och säkerhetsrelaterade uppgifter behålls endast så länge som krävs för ändamålet eller enligt
-    tillämpliga lagkrav.
+    <strong>Standard:</strong> Bilder som används för att ge dig ett analysresultat behandlas och raderas normalt så snart analysen är klar.
+  </p>
+  <p>
+    <strong>Om du har valt "Valfri förbättring av AI (opt-in)":</strong> Bilder som du delar för tester/utveckling kan lagras i upp till <strong>3 månader</strong> och raderas därefter.
+    Övriga tekniska loggar och säkerhetsrelaterade uppgifter behålls endast så länge som krävs för ändamålet eller enligt tillämpliga lagkrav.
   </p>
 
   <h2>5) Delning med tredje part</h2>
   <p>
-    Vi säljer inte personuppgifter. Vi kan dela nödvändiga uppgifter med betrodda leverantörer som behövs för att driva tjänsten,
-    till exempel molninfrastruktur för bildbehandling och drift, samt betal- och abonnemangshantering.
+    Vi säljer inte personuppgifter. När det behövs för att leverera appens funktion kan vi dela vissa uppgifter med följande leverantörer.
+    Vi delar endast den minsta mängd data som krävs (data-minimering).
   </p>
+
+  <ul>
+    <li>
+      <strong>Google Cloud Vision (Google LLC) — OCR</strong><br/>
+      <em>Vad kan skickas:</em> bild (eller relevanta delar av bilden) för att extrahera text.<br/>
+      <em>Syfte:</em> läsa text på skyltar/tilläggstavlor (t.ex. tider och villkor).
+    </li>
+    <li>
+      <strong>DeepL (DeepL SE) — Översättning</strong><br/>
+      <em>Vad kan skickas:</em> extraherad text (OCR-text) och språkinställningar.<br/>
+      <em>Syfte:</em> översätta text för att presentera resultatet.
+    </li>
+    <li>
+      <strong>Google Cloud Firestore (Google LLC) — Lagring</strong><br/>
+      <em>Vad kan lagras:</em> analysresultat (t.ex. extraherad/översatt text och tolkade regler), UUID, credits-saldo och nödvändig köpstatus.<br/>
+      <em>Syfte:</em> leverera historik/credits och driftsäker funktion.
+    </li>
+    <li>
+      <strong>RevenueCat, Inc. — Köp/abonnemang (verifiering)</strong><br/>
+      <em>Vad kan delas:</em> nödvändiga köpstatus-indikatorer (t.ex. abonnemangsstatus) och en app-identifierare (UUID/appUserID) för att kunna verifiera köp och hantera credits.<br/>
+      <em>Syfte:</em> verifiera köpstatus och hantera credits korrekt.
+    </li>
+    <li>
+      <strong>Apple (App Store) — Betalningsbehandling</strong><br/>
+      <em>Vad behandlas:</em> köp genomförs via App Store. Vi tar inte emot eller lagrar fullständiga kortuppgifter.<br/>
+      <em>Syfte:</em> genomföra och administrera köp.
+    </li>
+  </ul>
 
   <h2>6) Spårning och annonser</h2>
   <p>
@@ -62,7 +125,7 @@
 
   <h2>7) Betalningar via RevenueCat (credits)</h2>
   <p>
-    Betalningar och abonnemang hanteras via App Store/Google Play samt RevenueCat för att verifiera köpstatus och hantera credits.
+    Betalningar och abonnemang hanteras via App Store samt RevenueCat för att verifiera köpstatus och hantera credits.
     Vi lagrar inte fullständiga kortuppgifter. Vi kan lagra nödvändiga transaktionsindikatorer, köpstatus och credits-saldo på serversidan
     för att säkerställa korrekt saldo och förhindra manipulation.
   </p>
@@ -71,19 +134,26 @@
   <p>
     Vi använder rimliga säkerhetsåtgärder (t.ex. krypterad överföring, åtkomstkontroller och serverbaserade valideringar) för att skydda data
     och minska risken för intrång och fusk. Försök att manipulera credits, betalflöden eller säkerhetsmekanismer kan leda till avstängning,
-    och vid misstanke om bedrägeri eller intrång kan ärendet hanteras enligt tillämplig lag och rapporteras till berörda instanser.
+    och vid misstanke om bedrägeri eller intrång kan ärendet hanteras enligt tillämplig lag.
   </p>
 
   <h2>9) Rättslig grund (GDPR)</h2>
   <p>
-    Vi behandlar uppgifter för att kunna leverera tjänsten (avtal/berättigat intresse) och för att skydda systemet mot missbruk (berättigat intresse).
-    När bilder sparas för tester/utveckling av AI görs detta i syfte att förbättra tjänstens kvalitet och säkerhet, och med lämpliga skyddsåtgärder.
+    Vi behandlar uppgifter för att kunna leverera tjänsten (avtal) och för att skydda systemet mot missbruk (berättigat intresse).
+  </p>
+  <p>
+    <strong>Tredjeparts-AI (OCR/översättning):</strong> När Google Cloud Vision eller DeepL används görs det efter ditt <strong>samtycke</strong> i appen.
+  </p>
+  <p>
+    <strong>Valfri förbättring av AI (opt-in):</strong> Om du väljer att dela bilder för tester/AI-förbättring behandlar vi dessa uppgifter baserat på <strong>samtycke</strong>.
+    Du kan när som helst återkalla detta samtycke.
   </p>
 
   <h2>10) Dina rättigheter</h2>
   <p>
     Du kan begära information om behandling kopplad till din app-identitet (UUID), begära rättelse eller radering när det är möjligt,
-    samt invända mot viss behandling. Kontakta oss via e-post nedan.
+    samt invända mot viss behandling. Du kan även återkalla samtycke för tredjeparts-AI och för "Valfri förbättring av AI (opt-in)" när som helst.
+    Kontakta oss via e-post nedan.
   </p>
 
   <h2>11) Barn</h2>
@@ -94,7 +164,7 @@
   <h2>12) Ändringar i policyn</h2>
   <p>
     Vi kan uppdatera denna policy vid behov, exempelvis vid ändringar i funktioner, säkerhetsåtgärder eller lagkrav.
-    Den senaste versionen publiceras och gäller från och med datumet “Senast uppdaterad”.
+    Den senaste versionen publiceras och gäller från och med datumet "Senast uppdaterad".
   </p>
 
   <h2>13) Kontakt</h2>
